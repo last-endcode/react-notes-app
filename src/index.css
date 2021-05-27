@@ -1,13 +1,186 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --bg-primary: #333;
+  --bg-container: #a2388a;
+  --clrWhite: #fff;
+  --mediumWidth: 650px;
+}
+
+body {
+  background: var(--bg-container);
+  color: var(--clrWhite);
+  line-height: 1.5;
+}
+
+.edit-btn {
+  background: #ff0035;
+  color: var(--clrWhite);
+}
+
+main {
+  display: flex;
+  place-items: center;
+  min-height: 100vh;
+}
+.section-center {
+  width: 95vw;
+  max-width: var(--mediumWidth);
+  margin: 2rem auto;
+  background: var(--bg-primary);
+  padding: 1rem 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 7px #5e2b53;
+}
+
+.section-center h3 {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 2px;
+  color: #ec6bcf;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  column-gap: 0.2rem;
+}
+
+.title-icon {
+  font-size: 1.5rem;
+  color: #ec6bcf;
+}
+
+/* FORM  */
+
+.form-control {
+  margin: 1.2rem 0;
+  display: flex;
+  column-gap: 0.25rem;
+  justify-content: center;
+}
+
+/* input & button */
+.inputNote {
+  /* grow 0 width auto */
+  flex: 1 0 auto;
+  padding: 0.75rem;
+  border: transparent;
+  outline: none;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.inputNote::placeholder {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.submit-btn {
+  flex: 0 0 6rem;
+  padding: 0.75rem;
+  border: transparent;
+  outline: none;
+  background: var(--bg-container);
+  color: var(--clrWhite);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.submit-btn:hover {
+  background: #5e2b53;
+}
+
+.edit-btn {
+  background: #ff0035;
+  color: var(--clrWhite);
+}
+
+.notes-container {
+  text-align: center;
+}
+
+.clear-btn {
+  background: transparent;
+  border: none;
+  text-transform: capitalize;
+  display: inline-block;
+  letter-spacing: 2px;
+  color: var(--clrWhite);
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.clear-btn:hover {
+  color: #ff0035;
+}
+
+/* note-list  */
+.notes-list {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.noteText {
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.edittext-btn,
+.trash-btn {
+  font-size: 1.25rem;
+  background: transparent;
+  border: transparent;
+  margin: 0.4rem 0;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.edittext-btn {
+  margin-right: 0.5rem;
+  color: var(--bg-container);
+}
+
+.trash-btn {
+  font-size: 1rem;
+  color: #ff0035;
+}
+
+.edit-btn:hover,
+.trash-btn:hover {
+  transform: scale(1.25);
+}
+
+/* alert */
+.notif-warning {
+  background: #ff0035;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.notif-solved {
+  background: var(--bg-container);
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.notif {
+  text-align: center;
+  margin-bottom: 1rem;
 }
